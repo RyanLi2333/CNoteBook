@@ -1,0 +1,61 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0", // json版本
+    "configurations": 
+    [
+        {
+            // 调试器名字，可自定义
+            "name": "C/C++ Debugger",
+
+            // 调试器类型，标识C/C++调试器
+            "type": "cppdbg", 
+
+            // 启动并调试请求 
+            "request": "launch",
+
+            // 调试器要调试的程序位置(C生成的可执行文件的位置)，与task.json配合
+            "program": "${workspaceFolder}/output/output.exe",
+            
+            // 传递给程序的命令行参数列表 
+            "args": [],
+
+            // 是否在程序入口main就暂停，方便设置断点
+            "stopAtEntry": false,
+
+            // 设置工程根目录，工作目录
+            "cwd": "${workspaceFolder}",
+
+            // 环境变量设置(很少用)
+            "environment": [],
+
+            // 是否启用外部终端，默认为false，在vscode的内置终端调试
+            "externalConsole": true,
+
+            // 调试器与编译器的通信协议 
+            "MIMode": "gdb",
+
+            // 调试器的位置，需手动指定 
+            "miDebuggerPath": "E:/Development/MinGW64/ucrt64/bin/gdb.exe",
+
+            // 调试器启动时的一组配置指令
+            "setupCommands": 
+            [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ],
+
+            // 在启动调试之前，先运行哪一个任务，应保留，防止调试旧版本的.exe
+            "preLaunchTask": "C/C++: gcc.exe build active file",
+        }
+    ]
+}

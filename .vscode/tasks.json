@@ -1,0 +1,59 @@
+{
+	"version": "2.0.0",
+	"tasks": 
+	[
+		{
+			// 标识任务类型，vscode自动生成 
+			"type": "cppbuild",
+
+			// 任务名字，vscode自动生成 
+			"label": "C/C++: gcc.exe build active file", 
+
+			// 编译器位置 
+			"command": "E:/Development/MinGW64/ucrt64/bin/gcc.exe", 
+
+			// 编译器命令行的参数列表，允许vscode调用编译器的行为从而实现编译功能(需要考虑放置顺序)
+			"args": 
+			[
+				// 使用C17标准 
+				"-std=c17",
+				// 调试信息高亮
+				"-fdiagnostics-color=always",
+				// 启动调试信息
+				"-g",
+				// 指定头文件路径(到父级文件夹即可)
+				"-I${workspaceFolder}/include",
+				// 需要编译的.c文件 
+				"src/FunctionImpl.c",
+				"src/LinkListImpl.c",
+				"src/main.c",
+				// 编译结果输出
+				"-o",
+				"${workspaceFolder}/output/output.exe", // 可执行文件路径，多个.c文件编译后形成一个.exe
+				"-fexec-charset=GBK", // 字符编码设置，根据情况可以换成UTF-8
+			],
+
+			// 设置工程的根目录
+			"options": 
+			{
+				"cwd": "${workspaceFolder}"
+			},
+
+			// 自动识别编译错误信息并高亮显示
+			"problemMatcher": 
+			[
+				"$gcc"
+			],
+
+			// 启动任务类型设置
+			"group": 
+			{
+				"kind": "build",
+				"isDefault": true,
+			},
+
+			// 与编译行为无关
+			"detail": "compiler: E:/Development/MinGW64/ucrt64/bin/gcc.exe"
+		}
+	]
+}
