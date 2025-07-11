@@ -56,6 +56,7 @@ void prtMultiplyTable() {
     }
 }
 
+// 整数倒转
 int reverse(int x) {
     // 如果x为0直接返回，不用犹豫
     if (x == 0) {
