@@ -9,14 +9,17 @@
 /*主函数入口*/
 
 int main() {
-    // 查看基本数据类型的内存占用
-    getBasicDataMemory();
+    // // 查看基本数据类型的内存占用
+    // getBasicDataMemory();
 
-    //调用其他.c文件中的函数
-    int left = 0, right = 0; // 定义两个局部变量 
-    printf("请分别输入两个数：\n");
-    scanf("%d%d", &left, &right); // 用户终端输入两数
-    printf("两数之和为%d\n\n", addi(left, right)); // 两数求和 
+    // // 打印99乘法表 
+    // prtMultiplyTable();
+    
+    int x = 0;
+    printf("请输入一个数：");
+    scanf("%d", &x); 
+
+    printf("%d\n\n", reverse(x));
 
     // 程序结束 
     system("pause");

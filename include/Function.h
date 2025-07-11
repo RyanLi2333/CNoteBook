@@ -14,6 +14,7 @@
 int addi(int, int); // 两数之和 
 void swap(int*, int*); // 变量值互换 
 void getBasicDataMemory(); // 查询基本数据类型的系统内存占用 
-
+void prtMultiplyTable(); // 终端打印99乘法表 
+int reverse(int); // 题目
 
 #endif 
